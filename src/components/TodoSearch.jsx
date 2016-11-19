@@ -2,8 +2,9 @@ import React from 'react';
 
 var TodoSearch = React.createClass({
   handleSearch(){
-    var showCompleted = this.refs.showCompleted.value;
+    var showCompleted = this.refs.showCompleted.checked;
     var searchText = this.refs.searchText.value;
+
     this.props.onSearch(showCompleted, searchText);
   },
   render(){

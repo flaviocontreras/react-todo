@@ -42,7 +42,7 @@ var TodoApp = React.createClass({
     this.setState({
       showCompleted,
       searchText: searchText.toLowerCase()
-    })
+    });
   },
   render(){
     var {todos} = this.state;
