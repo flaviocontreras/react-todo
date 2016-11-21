@@ -18,7 +18,8 @@ export default {
     return $.isArray(todos) ? todos : [];
   },
   filterTodos(todos, showCompleted, searchText){
-    var searchText = searchText.toLowerCase();
+    searchText = searchText ? searchText.toLowerCase() : ''
+    //var searchText = searchText.toLowerCase();
     var filteredTodos = todos;
 
     // Filter by showCompleted
