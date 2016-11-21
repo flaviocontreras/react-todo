@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.15.2",
+    "deep-freeze-strict": "^1.1.1",
     "express": "^4.14.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
