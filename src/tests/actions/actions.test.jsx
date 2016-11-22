@@ -148,4 +148,25 @@ describe('Actions', () => {
     });
 
   });
+
+  it('should generate login action', () => {
+    var uid = 457
+    var action = {
+      type: "LOGIN",
+      uid
+    };
+    var res = actions.login(uid);
+
+    expect(res).toEqual(action);
+  });
+
+  it('should generate logout action', () => {
+    var action = {
+      type: "LOGOUT"
+    };
+    var res = actions.logout();
+
+    expect(res).toEqual(action);
+  });
+
 });
