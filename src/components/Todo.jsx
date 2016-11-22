@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import {connect} from 'react-redux';
-import {toggleTodo} from 'actions';
+import {startToggleTodo} from 'actions';
 
 
 // Exportando diretamente, para que nos testes não seja necessario criar uma store
@@ -24,7 +24,7 @@ export var Todo = React.createClass({
     return (
       <div className={todoClassName} onClick={() => {
           //this.props.onToggle(id);
-          dispatch(toggleTodo(id));
+          dispatch(startToggleTodo(id, !completed));
         }}>
         <div>
             <input type="checkbox" checked={completed} readOnly/>
