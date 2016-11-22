@@ -1,22 +1,22 @@
 import $ from 'jquery';
 export default {
-  setTodos(todos){
-    if ($.isArray(todos)) {
-      localStorage.setItem('todos', JSON.stringify(todos));
-      return todos;
-    }
-  },
-  getTodos(){
-    var stringTodos = localStorage.getItem('todos');
-    var todos = [];
-    try {
-        todos = JSON.parse(stringTodos);
-    } catch (e) {
-
-    }
-
-    return $.isArray(todos) ? todos : [];
-  },
+  // setTodos(todos){
+  //   if ($.isArray(todos)) {
+  //     localStorage.setItem('todos', JSON.stringify(todos));
+  //     return todos;
+  //   }
+  // },
+  // getTodos(){
+  //   var stringTodos = localStorage.getItem('todos');
+  //   var todos = [];
+  //   try {
+  //       todos = JSON.parse(stringTodos);
+  //   } catch (e) {
+  //
+  //   }
+  //
+  //   return $.isArray(todos) ? todos : [];
+  // },
   filterTodos(todos, showCompleted, searchText){
     searchText = searchText ? searchText.toLowerCase() : ''
     //var searchText = searchText.toLowerCase();
