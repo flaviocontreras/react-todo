@@ -5,12 +5,15 @@ import {browserHistory} from 'react-router';
 
 import * as actions from 'actions';
 import {configure} from 'configureStore';
+var store = configure();
 import firebase from 'app/firebase/';
 import router from 'app/router/';
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.dispatch(actions.login(user.uid));
+    // Moved startAdd so that it only happens after we already have the user uid
+    store.dispatch(actions.startAddTodos());
     browserHistory.push('/todos');
   } else {
     store.dispatch(actions.logout());
@@ -27,8 +30,8 @@ firebase.auth().onAuthStateChanged((user) => {
 
 // var initialTodos = TodoAPI.getTodos();
 // store.dispatch(actions.addTodos(initialTodos));
-var store = configure();
-store.dispatch(actions.startAddTodos());
+
+
 
 // Load foundation
 $(document).foundation();
